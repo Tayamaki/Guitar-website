@@ -1,0 +1,1506 @@
+//null style
+@import 'nullstyle.scss';
+
+//import fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+@font-face {
+    font-family: 'Cal Sans';
+    src: url('../fonts/calsans-semibold.eot');
+    src: local('☺'), url('../fonts/calsans-semibold.woff') format('woff'), url('../fonts/calsans-semibold.ttf') format('truetype'), url('../fonts/calsans-semibold.svg') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+//style================================================================
+body {
+    background: url(../img/top/image_1.png) top right no-repeat;
+    background-size: 672px 586px;
+    @media screen and (max-width: 1400px) {}
+    @media screen and (max-width: 1230px) {
+        background-size: 522px 436px;
+    }
+    @media screen and (max-width: 992px) {
+        background-size: 400px 314px;
+    }
+    @media screen and (max-width: 768px) {
+        background-size: 262px 176px;
+    }
+    @media screen and (max-width: 576px) {
+        background-size: 180px 130px;
+    }
+    &._lock {
+        overflow: hidden;
+    }
+}
+
+.wrapper {}
+
+.container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+    @media screen and (max-width: 1230px) {
+        .container {
+            width: 960px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        .container {
+            width: 720px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .container {
+            width: 540px;
+        }
+    }
+    @media screen and (max-width: 575px) {
+        .container {
+            width: 100%;
+            padding: 0 15px;
+        }
+    }
+}
+
+
+//header==============================================================
+.header {
+    margin: 62px 0 0 0;
+    @media screen and (max-width: 1400px) {}
+    @media screen and (max-width: 1230px) {
+        margin: 45px 0 0 0;
+    }
+    @media screen and (max-width: 992px) {
+        margin: 30px 0 0 0;
+    }
+    @media screen and (max-width: 768px) {
+        margin: 15px 0 0 0;
+    }
+    @media screen and (max-width: 576px) {}
+    &__container {
+        max-width: 1230px;
+        margin: 0 auto;
+        padding: 0 15px;
+    @media screen and (max-width: 575px) {
+        width: 100%;
+        padding: 0 15px;
+    }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__logo {
+        z-index: 3;
+        font-family: 'Cal Sans';
+        font-weight: 700;
+        font-size: 24px;
+        text-align: left;
+        color: #121212;
+        position: relative;
+        margin: 0 0 0 40px;
+        @media screen and (max-width: 1400px) {}
+        @media screen and (max-width: 1200px) {}
+        @media screen and (max-width: 992px) {
+            margin: 0 0 0 34px;
+            font-size: 20px;
+        }
+        @media screen and (max-width: 768px) {
+            font-size: 15px;
+            margin: 0 0 0 28px;
+        }
+        @media screen and (max-width: 576px) {}
+        &::before {
+            content: '';
+            background-image: url(../img/top/icons/butterfly_icon.png);
+            background-size: contain;
+            height: 28px;
+            width: 28px;
+            position: absolute;
+            bottom: 1px;
+            right: 95px;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1200px) {}
+            @media screen and (max-width: 992px) {
+                height: 22px;
+                width: 22px;
+                bottom: 1px;
+                right: 80px;
+            }
+            @media screen and (max-width: 768px) {
+                height: 16px;
+                width: 16px;
+                right: 60px;
+            }
+            @media screen and (max-width: 576px) {}
+        }
+    }
+    &__menu {}
+}
+.menu {
+    &__icon {
+    z-index: 5;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    &::before, &::after, & span {
+        left: 0;
+        position: absolute;
+        height: 10%;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        background-color: #121212;
+    }
+    &::before, &::after {
+        content: '';
+    }
+    &::before {
+        top: 0;
+    }
+    &::after {
+        bottom: 0;
+    }
+    & span {
+        top: 50%;
+        transform: scale(1) translate(0, -50%);
+    }
+    &._active {
+        &::before {
+            top: 50%;
+            transform: rotate(-45deg) translate(0, -50%);
+        }
+        span {
+            transform: scale(0) translate(0, -50%);
+        }
+        &::after {
+            bottom: 50%;
+            transform: rotate(45deg) translate(0, 50%);
+        }
+    }
+    }
+    &__body {
+        position: fixed;
+        left: 0;
+        top: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 100px 30px 30px 30px;
+        transition: top 0.3s ease 0s;
+        overflow: auto;
+        z-index: 2;
+        &._active::before {
+            content: '';
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            z-index: 2;
+            height: 140px;
+            @media screen and (max-width: 1230px) {
+                height: 120px;
+            }
+            @media screen and (max-width: 992px) {
+                height: 80px;
+            }
+            @media screen and (max-width: 768px) {
+                height: 50px;
+            }
+        }
+        &._active {
+            top: 0;
+        }
+    }
+    &__list {
+        text-align: center;
+        margin: 80px 0 0 0;
+    }
+    &__link {
+        margin: 0 0 25px 0;
+            &:last-child {
+                margin: 0;
+            }
+        a {
+        font-size: 40px;
+        color: #fff;
+        } 
+        &:hover {
+            text-decoration: underline;
+        }  
+    }
+}
+
+//main==============================================================
+//browse top  quality Guitars online================================
+.main {
+    &__browse {
+        margin: 145px 0 0 0;
+
+        @media screen and (max-width: 1230px) {
+            margin: 100px 0 0 0;
+        }
+
+        @media screen and (max-width: 992px) {
+            margin: 60px 0 0 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            margin: 40px 0 0 0;
+        }
+
+        @media screen and (max-width: 575px) {}
+
+        &_title {
+            font-family: 'Cal Sans';
+            font-weight: 700;
+            font-size: 56px;
+            text-align: left;
+            color: #121212;
+
+            span {
+                color: #FF6428;
+            }
+
+            @media screen and (max-width: 1230px) {
+                font-size: 35px;
+            }
+
+            @media screen and (max-width: 992px) {
+                font-size: 25px;
+            }
+
+            @media screen and (max-width: 768px) {
+                font-size: 15px;
+            }
+
+            @media screen and (max-width: 575px) {}
+        }
+
+        &_subtitle {
+            font-family: Poppins;
+            font-weight: 500;
+            font-size: 16px;
+            text-align: left;
+            color: #666666;
+            margin: 16px 0 0 0;
+
+            @media screen and (max-width: 1230px) {
+                font-size: 14px;
+
+            }
+
+            @media screen and (max-width: 992px) {
+                font-size: 11px;
+                margin: 10px 0 0 0;
+            }
+
+            @media screen and (max-width: 768px) {
+                font-size: 8px;
+                margin: 7px 0 0 0;
+            }
+
+            @media screen and (max-width: 575px) {}
+        }
+
+        &_row {
+            margin: 33px 0 0 0;
+            display: flex;
+            align-items: center;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                margin: 30px 0 0 0;
+            }
+            @media screen and (max-width: 992px) {
+                margin: 20px 0 0 0;
+            }
+            @media screen and (max-width: 768px) {
+                margin: 10px 0 0 0;
+            }
+            @media screen and (max-width: 576px) {}
+        }
+
+        &_getbutton {
+            flex: 0 1 auto;
+            padding: 18px 48px;
+            border-radius: 25px;
+            background-color: #FF6428;
+            a {
+                font-family: Poppins;
+                font-weight: 700;
+                font-size: 16px;
+                text-align: left;
+                color: #fff;
+            }
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                padding: 15px 45px;
+                a {
+                    font-size: 13px;
+                }
+            }
+            @media screen and (max-width: 992px) {
+                padding: 12px 42px;
+                a {
+                    font-size: 10px;
+                }
+            }
+            @media screen and (max-width: 768px) {
+                padding: 3px 20px 5px;
+                a {
+                    font-size: 7px;
+                }
+            }
+            @media screen and (max-width: 576px) {}
+        }
+
+        &_playbutton {
+            flex: 0 1 auto;
+            margin: 0 0 0 40px;
+            img {
+            width: 100%;
+            height: 100%;
+            }
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {}
+            @media screen and (max-width: 992px) {
+                margin: 0 0 0 30px;
+                img {
+                    width: 80%;
+                    height: 80%;
+                }
+            }
+            @media screen and (max-width: 768px) {
+                margin: 0 0 0 20px;
+                img {
+                    width: 60%;
+                    height: 60%;
+                }
+            }
+            @media screen and (max-width: 576px) {}
+        }
+
+        &_applebutton {
+            flex: 0 1 auto;
+            margin: 0 0 0 30px;
+            position: relative;
+            bottom: 2px;
+            img {
+                width: 100%;
+                height: 100%;
+                }
+                @media screen and (max-width: 1400px) {}
+                @media screen and (max-width: 1230px) {}
+                @media screen and (max-width: 992px) {
+                    margin: 0 0 0 20px;
+                    img {
+                        width: 80%;
+                        height: 80%;
+                    }
+                }
+                @media screen and (max-width: 768px) {
+                    margin: 0 0 0 10px;
+                    img {
+                        width: 60%;
+                        height: 60%;
+                    }
+                }
+                @media screen and (max-width: 576px) {}
+        }
+    }
+}
+
+//check out the Store=================================================
+.main {
+    &__check {
+        margin: 220px 0 0 0;
+        @media screen and (max-width: 1400px) {}
+        @media screen and (max-width: 1230px) {
+            margin: 150px 0 0 0;
+        }
+        @media screen and (max-width: 992px) {
+            margin: 100px 0 0 0;
+        }
+        @media screen and (max-width: 768px) {
+            margin: 80px 0 0 0;
+        }
+        @media screen and (max-width: 576px) {
+            margin: 50px 0 0 0;
+        }
+        &_title {
+            font-family: 'Cal Sans';
+            font-weight: 700;
+            font-size: 44px;
+            text-align: center;
+            color: #121212;
+            span {
+                color: #FF6428;
+            }
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                font-size: 30px;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 20px;
+            }
+            @media screen and (max-width: 768px) {}
+            @media screen and (max-width: 576px) {}
+        }
+
+        &_line {
+            margin: 90px 0 0 0;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                margin: 60px 0 0 0;
+            }
+            @media screen and (max-width: 992px) {
+                margin: 30px 0 0 0;
+            }
+            @media screen and (max-width: 768px) {
+                margin: 15px 0 0 0;
+            }
+            @media screen and (max-width: 576px) {}
+        }
+    }
+}
+.line {
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title {
+        font-family: Poppins;
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 8%;
+        @media screen and (max-width: 1400px) {}
+        @media screen and (max-width: 1230px) {
+            font-size: 17px;
+        }
+        @media screen and (max-width: 992px) {
+            font-size: 14px;
+        }
+        @media screen and (max-width: 768px) {
+            font-size: 11px;
+        }
+        @media screen and (max-width: 576px) {}
+    }
+
+    &__button {
+        font-family: Poppins;
+        font-weight: 500;
+        font-size: 20px;
+        @media screen and (max-width: 1400px) {}
+        @media screen and (max-width: 1230px) {
+            font-size: 17px;
+        }
+        @media screen and (max-width: 992px) {
+            font-size: 14px;
+        }
+        @media screen and (max-width: 768px) {
+            font-size: 11px;
+        }
+        @media screen and (max-width: 576px) {}
+        a {
+            color: #868686;
+        }
+    }
+
+    &__item {
+        flex: 0 1 33.333%;
+        margin: 32px 0 0 0;
+        @media screen and (max-width: 1400px) {}
+        @media screen and (max-width: 1230px) {
+            margin: 25px 0 0 0;
+        }
+        @media screen and (max-width: 992px) {
+            
+        }
+        @media screen and (max-width: 768px) {
+            margin: 20px 0 0 0;
+        }
+        @media screen and (max-width: 576px) {}
+        &_image {
+            img {
+                max-width: 100%;
+            }
+
+        }
+
+        &_name {
+            margin: 40px 0 0 0;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                margin: 30px 0 0 0;
+            }
+            @media screen and (max-width: 992px) {
+                margin: 20px 0 0 0;
+            }
+            @media screen and (max-width: 768px) {
+                margin: 10px 0 0 0;
+            }
+            @media screen and (max-width: 576px) {}
+            font-family: Poppins;
+            font-weight: 500;
+            font-size: 16px;
+            color: #121212;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                font-size: 14px;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 12px;
+            }
+            @media screen and (max-width: 768px) {
+                font-size: 10px;
+            }
+            @media screen and (max-width: 576px) {}
+        }
+
+        &_price {
+            margin: 7px 0 0 0;
+            font-family: Poppins;
+            font-size: 14px;
+            color: #666666;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                font-size: 12px;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 10px;
+            }
+            @media screen and (max-width: 768px) {
+                font-size: 8px;
+            }
+            @media screen and (max-width: 576px) {}
+        }
+    }
+}
+
+//choose based on categories==========================================
+.choose {
+    margin: 180px 0 0 0;
+    @media screen and (max-width: 1400px) {}
+    @media screen and (max-width: 1230px) {
+        margin: 150px 0 0 0;
+    }
+    @media screen and (max-width: 992px) {
+        margin: 100px 0 0 0;
+    }
+    @media screen and (max-width: 768px) {
+        margin: 80px 0 0 0;
+    }
+    @media screen and (max-width: 576px) {
+        margin: 50px 0 0 0;
+    }
+    &__title {
+        font-family: 'Cal Sans';
+        font-weight: 700;
+        font-size: 44px;
+        text-align: center;
+        color: #121212;
+        span {
+            color: #FF6428;
+        }
+        @media screen and (max-width: 1400px) {}
+        @media screen and (max-width: 1230px) {
+            font-size: 30px;
+        }
+        @media screen and (max-width: 992px) {
+            font-size: 20px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: center;
+        margin: 80px 0 0 0;
+        @media screen and (max-width: 1230px) {
+            margin: 60px 0 0 0;
+        }
+        @media screen and (max-width: 992px) {
+            margin: 40px 0 0 0;
+        }
+        @media screen and (max-width: 768px) {
+            margin: 20px 0 0 0;
+        }
+    }
+
+    &__item {
+        margin: 0 15px;
+        position: relative;
+        &_image {
+            img {
+                max-width: 100%;
+                border-radius: 25px;
+                transition: all 0.5s ease-out 0s;
+                @media screen and (max-width: 450px) {
+                    border-radius: 15px;
+                }
+                @media screen and (max-width: 350px) {
+                    border-radius: 10px;
+                }
+                &:hover {
+                    transform: scale(1.2);
+                    transition: all 0.5s ease-out 0s; 
+                    border: 1px solid #FF6428;
+                    box-shadow: 0px 0px 10px 1px #FF6428;
+                }
+            }
+        }
+        &_Text {
+            font-family: Poppins;
+            font-weight: 700;
+            font-size: 20px;
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            bottom: 7%;
+            transform: translate(-50%, -7%);
+            @media screen and (max-width: 991px) {
+                font-size: 15px;
+            }
+            @media screen and (max-width: 767px) {
+                font-size: 10px;
+            }
+            @media screen and (max-width: 576px) {
+                font-size: 5px;
+            }
+        }
+    }
+}
+
+
+//featuring the best brands===========================================
+.featuring {
+    margin: 180px 0 0 0;
+    @media screen and (max-width: 1400px) {}
+    @media screen and (max-width: 1230px) {
+        margin: 150px 0 0 0;
+    }
+    @media screen and (max-width: 992px) {
+        margin: 100px 0 0 0;
+    }
+    @media screen and (max-width: 768px) {
+        margin: 80px 0 0 0;
+    }
+    @media screen and (max-width: 576px) {
+        margin: 50px 0 0 0;
+    }
+    &__title {
+        font-family: 'Cal Sans';
+        font-weight: 700;
+        font-size: 44px;
+        text-align: center;
+        color: #121212;
+        span {
+            color: #FF6428;
+        }
+        @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                font-size: 30px;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 20px;
+            }
+            @media screen and (max-width: 768px) {}
+            @media screen and (max-width: 576px) {}
+    }
+
+    &__row {
+        margin: 75px auto 0;
+        @media screen and (max-width: 1400px) {}
+        @media screen and (max-width: 1230px) {
+            margin: 50px auto 0;
+        }
+        @media screen and (max-width: 992px) {
+            margin: 30px auto 0;
+        }
+        @media screen and (max-width: 768px) {
+            margin: 25px auto 0;
+        }
+        @media screen and (max-width: 576px) {}
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        a {
+            img {
+                max-width: 100%;
+                @media screen and (max-width: 1400px) {}
+                @media screen and (max-width: 1230px) {
+                    max-width: 85%;
+                }
+                @media screen and (max-width: 992px) {
+                    max-width: 70%;
+                }
+                @media screen and (max-width: 768px) {
+                    max-width: 55%;
+                }
+                @media screen and (max-width: 576px) {}
+                transition: all 0.4s ease-out 0s;
+                &:hover {
+                    transform: scale(1.5);
+                    transition: all 0.4s ease-out 0s;
+                }
+            }
+        }
+    }
+}
+
+//why try rhythm?=====================================================
+.why {
+    margin: 180px 0 0 0;
+    padding: 93px 0;
+    @media screen and (max-width: 1400px) {}
+    @media screen and (max-width: 1230px) {
+        margin: 150px 0 0 0;
+        padding: 80px 0;
+    }
+    @media screen and (max-width: 992px) {
+        margin: 100px 0 0 0;
+        padding: 65px 0;
+    }
+    @media screen and (max-width: 768px) {
+        margin: 80px 0 0 0;
+        padding: 50px 0;
+    }
+    @media screen and (max-width: 576px) {
+        margin: 50px 0 0 0;
+        padding: 35px 0;
+    }
+    background-color: #121212;
+    &__title {
+        font-family: 'Cal Sans';
+        font-weight: 700;
+        font-size: 44px;
+        text-align: center;
+        color: #fff;
+        @media screen and (max-width: 1400px) {}
+        @media screen and (max-width: 1230px) {
+            font-size: 30px;
+        }
+        @media screen and (max-width: 992px) {
+            font-size: 20px;
+        }
+        @media screen and (max-width: 768px) {}
+        @media screen and (max-width: 576px) {}
+        span {
+            color: #FF6428;
+        }
+    }
+
+    &__row {
+        margin: 75px 0 0 0;
+        padding: 0 30px;
+        @media screen and (max-width: 1400px) {}
+        @media screen and (max-width: 1230px) {
+            margin: 60px 0 0 0;
+        }
+        @media screen and (max-width: 992px) {
+            margin: 45px 0 0 0;
+        }
+        @media screen and (max-width: 768px) {
+            margin: 30px 0 0 0;
+        }
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    &__item {
+        text-align: center;
+        transition: all 0.5s ease 0s;
+        &:hover {
+            transform: scale(1.4);
+            transition: all 0.5s ease 0s;
+        }
+        &_image {
+            display: inline-block;
+            background-color: #262626;
+            border-radius: 25px;
+            img {
+                padding: 20px;
+                max-width: 100%;
+                max-height: 100%;
+                @media screen and (max-width: 1400px) {}
+                @media screen and (max-width: 1230px) {
+                    max-width: 90%;
+                    max-height: 90%;
+                    padding: 15px;
+                }
+                @media screen and (max-width: 992px) {
+                    max-width: 80%;
+                    max-height: 80%;
+                    padding: 10px;
+                }
+                @media screen and (max-width: 768px) {
+                    max-width: 70%;
+                    max-height: 70%;
+                    padding: 7px;
+                }
+                @media screen and (max-width: 576px) {
+
+                };
+            }
+        }
+
+        &_title {
+            margin: 40px 0 0 0;
+            font-family: Poppins;
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 8%;
+            text-transform: uppercase;
+            color: #fff;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                font-size: 16px;
+                margin: 30px 0 0 0;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 14px;
+                margin: 20px 0 0 0;
+            }
+            @media screen and (max-width: 768px) {
+                font-size: 12px;
+                margin: 15px 0 0 0;
+            }
+            @media screen and (max-width: 576px) {
+                font-size: 10px;
+            }
+        }
+
+        &_subtitle {
+            margin: 12px 0 0 0;
+            font-family: Poppins;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: capitalize;
+            color: #666666;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                font-size: 12px;
+                margin: 10px 0 0 0;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 10px;
+                margin: 8px 0 0 0;
+            }
+            @media screen and (max-width: 768px) {
+                font-size: 8px;
+                margin: 6px 0 0 0;
+            }
+            @media screen and (max-width: 576px) {
+                font-size: 6px;
+            }
+        }
+    }
+}
+
+//what our customer's say=============================================
+.what {
+    margin: 180px 0 0 0;
+    @media screen and (max-width: 1400px) {}
+    @media screen and (max-width: 1230px) {
+        margin: 150px 0 0 0;
+    }
+    @media screen and (max-width: 992px) {
+        margin: 100px 0 0 0;
+    }
+    @media screen and (max-width: 768px) {
+        margin: 80px 0 0 0;
+    }
+    @media screen and (max-width: 576px) {
+        margin: 50px 0 0 0;
+    }
+
+    &__title {
+        text-align: center;
+        font-family: 'Cal Sans';
+        font-weight: 700;
+        font-size: 44px;
+        color: #121212;
+        @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                font-size: 30px;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 20px;
+            }
+            @media screen and (max-width: 768px) {}
+            @media screen and (max-width: 576px) {}
+        span {
+            color: #FF6428;
+        }
+    }
+
+    &__row {
+        margin: 109px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media screen and (max-width: 1400px) {
+            margin: 90px  0;
+        }
+        @media screen and (max-width: 1230px) {
+            margin: 90px 0;
+        }
+        @media screen and (max-width: 992px) {
+            margin: 60px 0;
+        }
+        @media screen and (max-width: 768px) {
+            margin: 35px 0;
+            display: block;
+            text-align: center;
+        }
+        @media screen and (max-width: 576px) {}
+    }
+    &__item-image {
+        flex: 0 1 30%;
+    }
+    &__item-text {
+        flex: 1 1 50%;
+    }
+    &__item {
+        &_image {
+            img {
+                width: 100%;
+            }
+        }   
+        &_text {
+            font-family: Poppins;
+            font-size: 24px;
+            text-align: left;
+            color: #666666;
+            margin: 0 0 0 70px;
+            @media screen and (max-width: 1400px) {
+                margin: 0 0 0 50px;
+            }
+            @media screen and (max-width: 1230px) {
+                font-size: 20px;
+                margin: 0 0 0 40px;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 16px;
+                margin: 0 0 0 30px;
+            }
+            @media screen and (max-width: 768px) {
+                font-size: 12px;
+                margin: 20px 0 0 0;
+                text-align: center;
+            }
+            @media screen and (max-width: 576px) {}
+        }
+
+        &_name {
+            margin: 56px 0 0 0;
+            font-family: Poppins;
+            font-weight: 700;
+            font-size: 24px;
+            text-align: left;
+            color: #121212;
+            @media screen and (max-width: 1230px) {
+                font-size: 20px;
+                margin: 40px 0 0 0;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 16px;
+                margin: 30px 0 0 0;
+            }
+            @media screen and (max-width: 768px) {
+                font-size: 12px;
+                margin: 20px 0 0 0;
+                text-align: center;
+            }
+            @media screen and (max-width: 576px) {}
+        }
+
+        &_profession {
+            margin: 8px 0 0 0;
+            font-family: Poppins;
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: 8%;
+            text-align: left;
+            color: #868686;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                font-size: 14px;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 10px;
+            }
+            @media screen and (max-width: 768px) {
+                font-size: 8px;
+                text-align: center;
+            }
+            @media screen and (max-width: 576px) {}
+        }
+    }
+}
+
+//browse and buy your favorite guitars with rhythm====================
+.browsebuy {
+    margin: 180px 0 50px 0;
+    @media screen and (max-width: 1400px) {}
+    @media screen and (max-width: 1230px) {
+        margin: 150px 0 50px 0;
+    }
+    @media screen and (max-width: 992px) {
+        margin: 100px 0 50px 0;
+    }
+    @media screen and (max-width: 768px) {
+        margin: 80px 0 50px 0;
+    }
+    @media screen and (max-width: 576px) {
+        margin: 50px 0 50px 0;
+    }
+    &__row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media screen and (max-width: 768px) {
+            display: block;
+            text-align: center;
+        }
+        @media screen and (max-width: 576px) {}
+    }
+    &__item-text {
+        flex: 1 1 45%;
+        margin: 0 60px 0 0;
+        @media screen and (max-width: 1536px) {
+            margin: 0 55px 0 0;
+        }
+        @media screen and (max-width: 1366px) {
+            margin: 0 50px 0 0;
+        }
+        @media screen and (max-width: 1280px) {
+            margin: 0 45px 0 0;
+        }
+        @media screen and (max-width: 992px) {
+            margin: 0 40px 0 0;
+        }
+        @media screen and (max-width: 768px) {
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        @media screen and (max-width: 576px) {}
+    }
+    &__item-image {
+        img {
+            width: 100%;
+        }
+        flex: 1 1 45%;
+    }
+    &__item {
+        &_title {
+            font-family: 'Cal Sans';
+            font-weight: 700;
+            font-size: 48px;
+            text-align: left;
+            color: #121212;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                font-size: 40px;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 32px;
+            }
+            @media screen and (max-width: 768px) {
+                font-size: 24px;
+                text-align: center;
+            }
+            @media screen and (max-width: 576px) {
+                font-size: 18px;
+            }
+            span {
+                color: #FF6428;
+            }
+        }
+
+        &_row {
+            margin: 60px -12.5px 0;
+            display: flex;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                margin: 50px -10px 0;
+            }
+            @media screen and (max-width: 992px) {
+                margin: 40px -8px 0;
+            }
+            @media screen and (max-width: 768px) {
+                margin: 30px -6px 0;
+                justify-content: center;
+            }
+            @media screen and (max-width: 576px) {
+                margin: 20px -6px 0;
+            }
+        }
+
+        &_link {
+            margin: 0 12.5px;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                margin: 0 10px;
+            }
+            @media screen and (max-width: 992px) {
+                margin: 0 8px;
+            }
+            @media screen and (max-width: 768px) {
+                margin: 0 6px;
+            }
+            @media screen and (max-width: 576px) {}
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+//footer==============================================================
+.footer {
+    padding: 80px 0 43px 30px;
+    background-color: #eeeeee;
+    @media screen and (max-width: 1400px) {}
+    @media screen and (max-width: 1230px) {
+        padding: 60px 0 30px 20px;
+    }
+    @media screen and (max-width: 992px) {
+        padding: 50px 0 20px 10px;
+    }
+    @media screen and (max-width: 768px) {
+        padding: 40px 0 20px 10px;
+    }
+    @media screen and (max-width: 576px) {
+        padding: 30px 0 20px 15px;
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        @media screen and (max-width: 500px) {
+            display: block;
+        }
+    }
+    &__item-1 {
+        
+    }
+    &__item-2 {
+        margin: 0 50px;
+        @media screen and (max-width: 600px) {
+            margin: 0 20px;
+        }
+        @media screen and (max-width: 500px) {
+        margin: 0 20px;
+        }
+    }
+    &__item-3 {
+        margin: 0 50px;
+        @media screen and (max-width: 600px) {
+            margin: 0 20px;
+        }
+        @media screen and (max-width: 500px) {
+            margin: 0 20px;
+        }
+    }
+    &__item-4 {
+        @media screen and (max-width: 500px) {
+            margin: 10px 0 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &__item-row {
+        display: flex;
+        @media screen and (max-width: 620px) {
+            justify-content: center;
+            margin: 0 -20px 20px;
+        }
+        @media screen and (max-width: 500px) {
+            margin: 50px -15px 20px;
+            justify-content: center;
+        }
+    }
+    &__item {
+        text-align: left;
+        @media screen and (max-width: 500px) {
+            text-align: center;
+        }
+        &_name {
+            font-family: 'Cal Sans';
+            font-weight: 700;
+            font-size: 40px;
+            position: relative;
+            margin: 0 0 0 40px;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                font-size: 34px;
+                margin: 0 0 0 40px;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 28px;
+                margin: 0 0 0 30px;
+            }
+            @media screen and (max-width: 768px) {
+                font-size: 22px;
+                margin: 0 0 0 20px;
+            }
+            @media screen and (max-width: 500px) {
+                margin: 0 0 0 20px;
+            }
+            &::before {
+                content: '';
+                background-image: url(../img/footer/icons/Butterfly.png);
+                position: absolute;
+                background-size: contain;
+                width: 30px;
+                height: 30px;
+                left: -30%;
+                bottom: 10px;
+                @media screen and (max-width: 1400px) {}
+                @media screen and (max-width: 1230px) {
+                    
+                }
+                @media screen and (max-width: 992px) {
+                    
+                }
+                @media screen and (max-width: 768px) {
+                    width: 25px;
+                    height: 25px;
+                    bottom: 0;  
+                }
+                @media screen and (max-width: 500px) {
+                    left: 30%;
+                }
+                @media screen and (max-width: 380px) {
+                    left: 24%;
+                }
+            }
+        }
+
+        &_post {
+            font-family: Poppins;
+            font-size: 16px;
+            color: #666666;
+            position: relative;
+            top: 15px;
+            margin: 0 0 0 40px;
+            
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                top: 15px;
+                margin: 0 0 0 40px;
+                font-size: 14px;
+            }
+            @media screen and (max-width: 992px) {
+                margin: 0 0 0 30px;
+                font-size: 12px;
+            }
+            @media screen and (max-width: 768px) {
+                top: 10px;
+                margin: 0 0 0 20px;
+                font-size: 10px;
+            }
+            @media screen and (max-width: 600px) {
+                margin: 0 0 0 15px;
+            }
+            @media screen and (max-width: 500px) {
+                margin: 0 0 0 35px;
+            }
+            &::before {
+                content: '';
+                background-image: url(../img/footer/icons/sms.png);
+                position: absolute;
+                background-size: contain;
+                height: 24px;
+                width: 24px;
+                @media screen and (max-width: 1100px) {
+                    height: 22px;
+                    width: 22px;
+                }
+                @media screen and (max-width: 992px) {
+                    height: 20px;
+                    width: 20px;
+                }
+                @media screen and (max-width: 768px) {
+                    height: 18px;
+                    width: 18px;
+                }
+                @media screen and (max-width: 500px) {
+                    height: 15px;
+                    width: 15px;
+                }
+                left: -25%;
+            }
+        }
+
+        &_location {
+            font-family: Poppins;
+            font-size: 16px;
+            color: #666666;
+            position: relative;
+            top: 25px;
+            left: 40px;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                left: 40px;
+                font-size: 14px;
+            }
+            @media screen and (max-width: 992px) {
+                top: 20px;
+                font-size: 12px;
+                left: 30px;
+            }
+            @media screen and (max-width: 768px) {
+                left: 20px;
+                font-size: 10px;
+            }
+            @media screen and (max-width: 576px) {
+                left: 15px;
+            }
+            &::before {
+                content: '';
+                background-image: url(../img/footer/icons/location.png);
+                position: absolute;
+                background-size: contain;
+                height: 24px;
+                width: 24px;
+                @media screen and (max-width: 1100px) {
+                    height: 22px;
+                    width: 22px;
+                }
+                @media screen and (max-width: 992px) {
+                    height: 20px;
+                    width: 20px;
+                }
+                @media screen and (max-width: 768px) {
+                    height: 18px;
+                    width: 18px;
+                }
+                @media screen and (max-width: 500px) {
+                    height: 15px;
+                    width: 15px;
+                }
+                @media screen and (max-width: 500px) {
+                    height: 15px;
+                    width: 15px;
+                }
+                left: -20%;
+                @media screen and (max-width: 500px) {
+                    left: 35%;
+                }
+                @media screen and (max-width: 450px) {
+                    left: 33%;
+                }
+                @media screen and (max-width: 400px) {
+                    left: 30%;
+                }
+                @media screen and (max-width: 350px) {
+                    left: 26%;
+                }
+            }
+        }
+
+        &_title {
+            font-family: Poppins;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #121212;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                font-size: 16px;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 14px;
+            }
+            @media screen and (max-width: 768px) {
+                font-size: 12px;
+            }
+            @media screen and (max-width: 576px) {}
+        }
+
+        &_subtitle {
+            margin: 20px 0 0 0;
+            font-family: Poppins;
+            font-size: 16px;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                font-size: 14px;
+                margin: 15px 0 0 0;
+            }
+            @media screen and (max-width: 992px) {
+                font-size: 12px;
+            }
+            @media screen and (max-width: 768px) {
+                font-size: 10px;
+                margin: 10px 0 0 0;
+            }
+            @media screen and (max-width: 576px) {}
+            a {
+                color: #121212;
+                opacity: 60%;
+            }
+        }
+
+        &_row {
+            display: flex;
+            margin: 12px -10px;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                margin: 10px -8px;
+            }
+            @media screen and (max-width: 992px) {
+                margin: 10px -6px;
+            }
+            @media screen and (max-width: 768px) {}
+            @media screen and (max-width: 500px) {
+                margin: 0 0 0 40px;
+            }
+        }
+
+        &_link {
+            margin: 0 10px;
+            @media screen and (max-width: 1400px) {}
+            @media screen and (max-width: 1230px) {
+                margin: 0 8px;
+            }
+            @media screen and (max-width: 992px) {
+                margin: 0 6px;
+            }
+            @media screen and (max-width: 768px) {}
+            @media screen and (max-width: 500px) {
+
+            }
+            
+        }
+    }
+    &__subtext {
+        margin: 80px 0 0 0;
+        font-family: Poppins;
+        font-size: 16px;
+        text-align: center;
+        color: #121212;
+        opacity: 60%;
+        @media screen and (max-width: 1400px) {}
+        @media screen and (max-width: 1230px) {
+            margin: 70px 0 0 0;
+            font-size: 15px;
+        }
+        @media screen and (max-width: 992px) {
+            margin: 60px 0 0 0;
+            font-size: 14px;
+        }
+        @media screen and (max-width: 768px) {
+            margin: 40px 0 0 0;
+            font-size: 12px;
+        }
+        @media screen and (max-width: 576px) {
+            margin: 30px 0 0 0;
+            font-size: 10px;
+        }
+    }
+}
